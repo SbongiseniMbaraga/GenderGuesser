@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GenderGuesser">
         <activity
+            android:name=".Female"
+            android:exported="false" />
+        <activity
             android:name=".Male"
             android:exported="true">
             <intent-filter>

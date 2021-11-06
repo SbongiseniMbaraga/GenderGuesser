@@ -4,33 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Male">
+    tools:context=".Female">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="121dp"
-        android:layout_height="111dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193"
-        app:srcCompat="@drawable/male_one" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="123dp"
-        android:layout_height="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.798"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378"
-        app:srcCompat="@drawable/male_two" />
-
-    <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView8"
         android:layout_width="106dp"
         android:layout_height="91dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,10 +16,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.373"
-        app:srcCompat="@drawable/male_three" />
+        app:srcCompat="@drawable/female_two" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imageView9"
+        android:layout_width="123dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.798"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.378"
+        app:srcCompat="@drawable/female_three" />
+
+    <ImageView
+        android:id="@+id/imageView10"
         android:layout_width="114dp"
         android:layout_height="88dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,10 +40,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.59"
-        app:srcCompat="@drawable/male_five" />
+        app:srcCompat="@drawable/female_six" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageView11"
+        android:layout_width="121dp"
+        android:layout_height="111dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.193"
+        app:srcCompat="@drawable/female_one" />
+
+    <ImageView
+        android:id="@+id/imageView12"
         android:layout_width="133dp"
         android:layout_height="110dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,23 +63,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.55"
-        app:srcCompat="@drawable/male_four" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:fontFamily="@font/architects_daughter"
-        android:text="You are Male !"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/female_four" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView13"
         android:layout_width="133dp"
         android:layout_height="118dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,5 +75,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.763"
-        app:srcCompat="@drawable/male_six" />
+        app:srcCompat="@drawable/female_five" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/architects_daughter"
+        android:text="You are Female !"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
