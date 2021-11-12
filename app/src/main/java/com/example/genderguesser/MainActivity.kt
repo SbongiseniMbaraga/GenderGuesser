@@ -16,8 +16,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 const val BASE_URL = "https://api.genderize.io/"
 var userGender = ""
-const val MALE = "male"
-const val FEMALE = "female"
+var MALE = "male"
+var FEMALE = "female"
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,11 +31,11 @@ class MainActivity : AppCompatActivity() {
                 getMyData(editText.text.toString())
 
                 if (userGender == MALE){
-                    Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT)
+                    Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Male::class.java)
                     startActivity(intent)
                 }else if (userGender == FEMALE){
-                    Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT)
+                    Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, Female::class.java)
                     startActivity(intent)
                 }
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<MyData?>, response: Response<MyData?>) {
                 val responseBody = response.body()!!
                 userGender = responseBody.gender
-                Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
             }
 
             override fun onFailure(call: Call<MyData?>, t: Throwable) {
