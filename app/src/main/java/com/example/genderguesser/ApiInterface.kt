@@ -8,9 +8,6 @@ import retrofit2.http.Query
 import retrofit2.http.QueryMap
 
 interface ApiInterface {
-//    @GET("?name=Dan")
-//    fun getData(): Call<MyData>
-
     @GET("/")
     fun getGenderName(@Query("name") name: String?): Call<MyData>
 }
