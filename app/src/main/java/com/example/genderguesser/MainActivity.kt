@@ -14,10 +14,10 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val BASE_URL = "https://api.genderize.io/"
-var userGender = ""
-var MALE = "male"
-var FEMALE = "female"
+private const val BASE_URL = "https://api.genderize.io/"
+private var userGender = ""
+private var MALE = "male"
+private var FEMALE = "female"
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,26 +25,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val editText = findViewById<EditText>(R.id.editText_name)
-
-        editText.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+        editText.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP){
                 getMyData(editText.text.toString())
 
-                if (userGender == MALE){
-                    Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, Male::class.java)
-                    startActivity(intent)
-                }else if (userGender == FEMALE){
-                    Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, Female::class.java)
-                    startActivity(intent)
-                }
+
                 return@OnKeyListener true
             }
             false
         })
     }
-    private fun getMyData(userInput: String) {
+    private fun getMyData (userInput: String){
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
@@ -57,9 +48,24 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<MyData?>, response: Response<MyData?>) {
                 val responseBody = response.body()!!
                 userGender = responseBody.gender
-                //Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
-            }
 
+                val intentMale = Intent(applicationContext, Male::class.java)
+                val intentFemale = Intent(applicationContext, Female::class.java)
+
+                when (userGender) {
+                    MALE -> {
+                        Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
+                        startActivity(intentMale)
+                    }
+                    FEMALE -> {
+                        Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
+                        startActivity(intentFemale)
+                    }
+                    else -> {
+                        Toast.makeText(applicationContext,"$userGender: userGender is not being populated", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
             override fun onFailure(call: Call<MyData?>, t: Throwable) {
                 Log.d("MainActivity", "onFailure: " + t.message)
             }
