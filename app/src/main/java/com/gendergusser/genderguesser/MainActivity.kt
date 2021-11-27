@@ -1,12 +1,14 @@
-package com.example.genderguesser
+package com.gendergusser.genderguesser
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,12 +26,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        Toast.makeText(this.applicationContext, "Please enter your first name", Toast.LENGTH_SHORT).show()
+
         val editText = findViewById<EditText>(R.id.editText_name)
         editText.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP){
                 getMyData(editText.text.toString())
-
-
                 return@OnKeyListener true
             }
             false
@@ -54,15 +56,13 @@ class MainActivity : AppCompatActivity() {
 
                 when (userGender) {
                     MALE -> {
-                        Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
                         startActivity(intentMale)
                     }
                     FEMALE -> {
-                        Toast.makeText(applicationContext, userGender, Toast.LENGTH_SHORT).show()
                         startActivity(intentFemale)
                     }
-                    else -> {
-                        Toast.makeText(applicationContext,"$userGender: userGender is not being populated", Toast.LENGTH_SHORT).show()
+                    null -> {
+                        Toast.makeText(applicationContext, "Please try a different name", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -70,5 +70,12 @@ class MainActivity : AppCompatActivity() {
                 Log.d("MainActivity", "onFailure: " + t.message)
             }
         })
+    }
+    private fun loadingSpinner(){
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        progressBar.visibility = View.VISIBLE
+    }
+    private fun sleep(){
+        Thread.sleep(1_000)
     }
 }

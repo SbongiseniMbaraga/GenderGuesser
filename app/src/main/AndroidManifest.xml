@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.genderguesser" >
+    package="com.gendergusser.genderguesser" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GenderGuesser" >
         <activity
-            android:name=".MainActivity"
+            android:name="com.gendergusser.genderguesser.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,11 +22,11 @@
         </activity>
 
         <activity
-            android:name=".Male"
+            android:name="com.gendergusser.genderguesser.Male"
             android:exported="false" />
 
         <activity
-            android:name=".Female"
+            android:name="com.gendergusser.genderguesser.Female"
             android:exported="false" />
 
         <meta-data

@@ -1,4 +1,4 @@
-package com.example.genderguesser
+package com.gendergusser.genderguesser
 
 import retrofit2.Call
 import retrofit2.http.GET

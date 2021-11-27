@@ -1,4 +1,4 @@
-package com.example.genderguesser
+package com.example.ganderguesser
 
 import org.junit.Test
 
