@@ -1,4 +1,4 @@
-package com.gendergusser.genderguesser
+package com.gandergusser.ganderguesser
 
 data class MyData(
     val count: Int,

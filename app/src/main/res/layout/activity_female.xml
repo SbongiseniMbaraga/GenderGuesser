@@ -5,7 +5,7 @@
     android:id="@+id/back_two"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gendergusser.genderguesser.Female">
+    tools:context="com.gandergusser.ganderguesser.Female">
 
     <Button
         android:id="@+id/back_one2"
