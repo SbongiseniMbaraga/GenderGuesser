@@ -71,11 +71,4 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-    private fun loadingSpinner(){
-        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
-        progressBar.visibility = View.VISIBLE
-    }
-    private fun sleep(){
-        Thread.sleep(1_000)
-    }
 }
