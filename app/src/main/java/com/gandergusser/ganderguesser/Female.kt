@@ -16,6 +16,7 @@ class Female : AppCompatActivity() {
         back.setOnClickListener(View.OnClickListener {
             val intentMain = Intent(applicationContext, MainActivity::class.java)
             startActivity(intentMain)
+            finish()
         })
     }
 }
